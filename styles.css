@@ -17,8 +17,8 @@ body {
 }
 .cake .cake-img {
   height: 150px;
-  background: url('https://raw.githubusercontent.com/filippella/Dagger-Rx-Database-MVP/master/cakes/lemoncheese_cake.jpg'),
-    linear-gradient(rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.562));
+ 
+ background:    linear-gradient(rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.562));
 
   background-blend-mode: multiply;
   background-position: center;
@@ -58,4 +58,16 @@ body {
   gap: 20px;
   flex-flow: wrap;
   /* padding: 10px; */
+}
+.cake-holder{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-flow: wrap;
+}
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
