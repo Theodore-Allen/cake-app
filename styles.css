@@ -29,7 +29,7 @@ body {
 }
 .cake input {
   margin-top: 1px;
-  display: inline;
+
   height: 40px;
   border: 0;
   background: transparent;
@@ -57,5 +57,5 @@ body {
   justify-content: center;
   gap: 20px;
   flex-flow: wrap;
-  padding: 10px;
+  /* padding: 10px; */
 }
