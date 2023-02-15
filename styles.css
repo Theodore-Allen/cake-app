@@ -3,10 +3,13 @@
   padding: 0;
 }
 body {
-  background: url();
+  background: url('baked-1.png');
+  background-position: center;
+  background: pink;
+  background-size: cover;
 }
 .cake {
-  border: 1px solid black;
+  border: 1px solid rgb(255, 0, 157);
   border-radius: 10px;
   box-shadow: 10px 10px black;
   background-color: black;
@@ -37,7 +40,7 @@ body {
   margin-bottom: 10px;
 }
 .cake .name {
-  padding-left: 3px;
+  padding-left: 10px;
   width: 210px;
   font-size: 20px;
 }
