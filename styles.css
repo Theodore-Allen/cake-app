@@ -54,6 +54,7 @@ body {
 }
 .cake:hover {
   box-shadow: 6px 6px black;
+  overflow-y: visible;
 }
 .cake-container {
   display: flex;

@@ -13,6 +13,7 @@ async function app() {
     let cake_data = document.createElement('div');
     let name = document.createElement('input');
     let price = document.createElement('input');
+    let disc = document.createElement('p');
 
     name.readOnly = true;
     price.readOnly = true;
@@ -22,18 +23,20 @@ async function app() {
     cake_data.classList.add('cake-data');
     name.classList.add('name');
     price.classList.add('price');
-
+    disc.classList.add('discription');
     name.value = response.cakes[i].title;
+    disc.innerText = response.cakes[i].detailDescription;
     cake_img.style.backgroundImage = `url(${response.cakes[i].image})`;
     price.value = '$' + getRandomInt(20, 50);
     cake.appendChild(cake_img);
     cake_data.append(name);
     cake_data.append(price);
+    cake_data.append(disc);
     cake.append(cake_data);
     cake_container.append(cake);
     console.log(cake_container);
     cake_holder.append(cake_container);
-    console.log(response.cakes[i]);
+    console.log(disc);
   }
 
   console.log(response.cakes);
