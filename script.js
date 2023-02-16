@@ -63,11 +63,17 @@ async function app() {
       firstClick = 0;
       console.log(cake_type.value);
 
+
+      for(let i = 0; i < a_cake.length; i++)
+      {
+        a_cake[i].classList.remove('hide');
+      }
       for (let i = 0; i < a_cake.length; i++) {
+        console.log(a_cake[i].dataset.type)
         if (a_cake[i].dataset.type == cake_type.value) {
-          continue;
+          
         } else {
-          a_cake.classList.add('hide');
+          a_cake[i].classList.add('hide');
         }
       }
     }
