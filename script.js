@@ -1,10 +1,11 @@
 async function app() {
-  let endpoint =
-    'cakes.json';
+  let endpoint = 'cakes.json';
   let server = await fetch(endpoint);
   let response = await server.json();
 
   let cake_holder = document.getElementById('cake-holder');
+  let cake_type = document.getElementById('cake-type');
+
   let cake_container = document.createElement('div');
   let cake = document.createElement('div');
   let cake_img = document.createElement('div');
@@ -12,7 +13,6 @@ async function app() {
   let name = document.createElement('input');
   let price = document.createElement('input');
   let disc = document.createElement('p');
-
 
   name.readOnly = true;
   price.readOnly = true;
@@ -27,13 +27,12 @@ async function app() {
 
   cake_img.style.backgroundBlendMode = 'muliply';
   for (let i = 0; i < response.cakes.length; i++) {
-   
     name.value = response.cakes[i].title;
     disc.innerText = response.cakes[i].detailDescription;
     cake_img.style.backgroundImage = `url(${response.cakes[i].image}), linear-gradient(rgba(0, 0, 0, 0.162), rgba(0, 0, 0, 0.262))`;
     price.value = '$' + getRandomInt(20, 50);
     cake.dataset.type = response.cakes[i].tag;
-    
+
     cake.appendChild(cake_img);
     cake_data.append(name);
     cake_data.append(price);
@@ -46,8 +45,6 @@ async function app() {
   let a_cake = document.getElementsByClassName('cake');
   console.log(a_cake);
   for (let i = 0; i < a_cake.length; i++) {
-    console.log(a_cake[i].dataset.type)
-
     a_cake[i].addEventListener('click', () => {
       if (a_cake[i].dataset.on == 'false') {
         a_cake[i].style.height = '100%';
@@ -58,10 +55,23 @@ async function app() {
       }
     });
   }
+  var firstClick = 0;
+  cake_type.addEventListener('click', () => {
+    if (firstClick == 0) {
+      firstClick++;
+    } else {
+      firstClick = 0;
+      console.log(cake_type.value);
 
-
-
-  
+      for (let i = 0; i < a_cake.length; i++) {
+        if (a_cake[i].dataset.type == cake_type.value) {
+          continue;
+        } else {
+          a_cake.classList.add('hide');
+        }
+      }
+    }
+  });
 }
 function getRandomInt(min, max) {
   min = Math.ceil(min);
