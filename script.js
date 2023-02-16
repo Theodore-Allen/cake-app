@@ -3,7 +3,6 @@ async function app() {
     'https://gist.githubusercontent.com/prayagKhanal/8cdd00d762c48b84a911eca2e2eb3449/raw/5c5d62797752116799aacaeeef08ea2d613569e9/cakes.json';
   let server = await fetch(endpoint);
   let response = await server.json();
-  console.log(response);
 
   for (let i = 0; i < response.cakes.length; i++) {
     let cake_holder = document.getElementById('cake-holder');
@@ -34,12 +33,8 @@ async function app() {
     cake_data.append(disc);
     cake.append(cake_data);
     cake_container.append(cake);
-    console.log(cake_container);
     cake_holder.append(cake_container);
-    console.log(disc);
   }
-
-  console.log(response.cakes);
 }
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -47,3 +42,9 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
 app();
+let cake = document.querySelectorAll('caek');
+for (let i = 0; i < cake.length; i++) {
+  cake[i].addEventListener('click', () => {
+    console.log(cake[i].style.height);
+  });
+}

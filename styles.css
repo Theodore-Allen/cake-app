@@ -18,6 +18,10 @@ body {
   transition: ease all 0.4s;
   overflow: hidden;
 }
+.cake:focus
+{
+  height: 100%;
+}
 .cake .cake-img {
   height: 150px;
 
@@ -54,7 +58,7 @@ body {
 }
 .cake:hover {
   box-shadow: 6px 6px black;
-  overflow-y: visible;
+ 
 }
 .cake-container {
   display: flex;
@@ -68,10 +72,15 @@ body {
   justify-content: center;
   gap: 20px;
   flex-flow: wrap;
+  transition: ease all 0.5s;
 }
 h1 {
   font-size: 3rem;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+.discription {
+  padding: 10px;
+  font-size: 20px;
 }
